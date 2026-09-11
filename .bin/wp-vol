@@ -1,0 +1,15 @@
+#!/bin/sh
+
+# Get mute status and volume percentage for the default sink
+mute=$(pactl get-sink-mute @DEFAULT_SINK@ | awk '{print $2}')
+volume=$(pactl get-sink-volume @DEFAULT_SINK@ | head -n1 | awk '{print $5}' | tr -d '%')
+
+# Check for mute state
+if [ "$mute" = "yes" ]; then
+	text="Muted"
+else
+	text="Volume:"
+fi
+
+# Send notification
+notify-send -t 1000 -a 'pa-vol' -h string:x-canonical-private-synchronous:volume -h int:value:$volume "$text ${volume}%"
