@@ -1,0 +1,48 @@
+mode "F1" {
+        bindsym	F1 exec	footclient -e sudo -i
+        bindsym F2 exec footclient 
+        bindsym	F3 exec	virt-manager
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+mode "F2" {
+        bindsym F1 exec retroarch
+        bindsym F2 exec PPSSPPQt
+        bindsym F3 exec pcsx2-qt
+        bindsym F4 exec dosbox-x
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+mode "F3" {
+        bindsym F1 exec pavucontrol-qt
+        bindsym F2 exec gtk-pipe-player
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+mode "F4" {
+        bindsym F1 exec qutebrowser
+        bindsym F2 exec footclient -e elinks
+        bindsym F3 exec footclient -e ssh hp11
+        bindsym Return mode "default"
+	bindsym Escape mode "default"
+}
+
+
+# resize mode
+mode "resize" {
+	bindsym Left resize shrink width 5px
+	bindsym Down resize grow height 5px
+	bindsym Up resize shrink height 5px
+	bindsym Right resize grow width 5px
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+bindsym $mod+F1 mode "F1"
+bindsym $mod+F2 mode "F2"    
+bindsym $mod+F3 mode "F3"
+bindsym $mod+F4 mode "F4"

@@ -1,0 +1,28 @@
+#Volume Controls  
+bindsym XF86AudioRaiseVolume exec pamixer -i 5 && wp-vol
+bindsym XF86AudioLowerVolume exec pamixer -d 5 && wp-vol
+
+#ScreenShot 
+set $sshot "$(date)".png
+bindsym Print exec grim ~/Screenshots/$sshot && notify-send 'Screenshot Taken'
+
+#foot-server
+bindsym $mod+Shift+p exec killall -9 foot && exec foot --server
+
+#misc commands
+bindsym $mod+t exec notify-send "$(date)"
+
+### Basic key bindings (sway defaults, using $mod and $term)
+bindsym $mod+Return exec $term
+bindsym $mod+Shift+q kill
+
+#bindsym $mod+d exec wmenu-run
+bindsym $mod+d exec $(tofi-run)
+
+# reload/exit
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+e exec swaynag -t warning -m 'Exit sway?' -b 'Yes' 'swaymsg exit'
+
+#Transparancy 
+bindsym $mod+Shift+o opacity set 0.85
+bindsym $mod+o opacity set 1

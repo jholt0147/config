@@ -1,0 +1,10 @@
+# ~/.config/sway/config
+output * bg /mnt/hd/test3.png fit
+### Variables
+set $mod Mod4
+set $term footclient || foot
+set $sshot "$(date)".png
+
+
+
+include ~/.config/sway/config.d/*
